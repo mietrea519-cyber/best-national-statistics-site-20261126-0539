@@ -1,0 +1,340 @@
+/* Indonesia in Numbers — design system.
+   Warm paper background, deep teal ink, amber accents. System fonts only:
+   the site must work with no network request at all. */
+
+:root {
+  --paper: #f7f4ec;
+  --card: #fffdf7;
+  --ink: #1c2420;
+  --muted: #6b7280;
+  --teal: #0d5c57;
+  --teal-deep: #0a3f3c;
+  --teal-soft: #17837c;
+  --amber: #e8a33d;
+  --line: #e3ddd0;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+a { color: var(--teal); }
+
+/* ---------- header ---------- */
+
+.site-header {
+  background: var(--teal-deep);
+  color: #f2efe6;
+  padding: 0 0 0;
+}
+
+.header-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 18px 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 18px;
+}
+
+.brand {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.brand em { color: var(--amber); font-style: normal; }
+
+.header-tag {
+  font-size: 13px;
+  color: #b9d6d2;
+}
+
+.site-nav {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 12px 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.site-nav a {
+  color: #d7e6e2;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 8px 8px 0 0;
+}
+
+.site-nav a:hover { color: #fff; background: rgba(255, 255, 255, 0.08); }
+
+.site-nav a.active {
+  background: var(--paper);
+  color: var(--teal-deep);
+}
+
+/* ---------- layout ---------- */
+
+.page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 20px 20px 48px;
+}
+
+.page h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 34px;
+  line-height: 1.15;
+  margin: 4px 0 8px;
+}
+
+.lede {
+  font-size: 17px;
+  color: #3d4742;
+  max-width: 640px;
+  margin: 0 0 20px;
+}
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--teal-soft);
+  margin: 0;
+}
+
+section { margin-bottom: 34px; }
+
+section > h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 23px;
+  margin: 0 0 4px;
+}
+
+section > p.section-note {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0 0 16px;
+}
+
+/* ---------- cards ---------- */
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.kpi {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px 18px 12px;
+}
+
+.kpi .kpi-value {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--teal-deep);
+  line-height: 1.1;
+}
+
+.kpi .kpi-label {
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.kpi .kpi-note {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.kpi .kpi-source {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 10px;
+  border-top: 1px solid var(--line);
+  padding-top: 8px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+}
+
+.card h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  margin: 0 0 4px;
+}
+
+.card .card-note {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 14px;
+  align-items: stretch;
+}
+
+canvas.chart { width: 100%; display: block; }
+
+/* ---------- tables ---------- */
+
+table.data {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14.5px;
+}
+
+table.data th {
+  text-align: left;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  border-bottom: 2px solid var(--teal);
+  padding: 8px 10px 8px 0;
+}
+
+table.data td {
+  border-bottom: 1px solid var(--line);
+  padding: 9px 10px 9px 0;
+  vertical-align: top;
+}
+
+table.data td.num, table.data th.num { text-align: right; }
+
+table.data tr:hover td { background: #faf7ee; }
+
+table.data tr.top-row td { font-weight: 700; }
+
+.table-tools {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.table-tools input[type="search"] {
+  font: inherit;
+  font-size: 14px;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #fff;
+  min-width: 240px;
+}
+
+.table-tools .hint { font-size: 13px; color: var(--muted); }
+
+/* ---------- facts & lists ---------- */
+
+.fact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fact-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+}
+
+.fact-list li:last-child { border-bottom: 0; }
+
+.fact-list .fact-value { font-weight: 700; text-align: right; white-space: nowrap; }
+
+.source-note {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+.callout {
+  background: #fdf3dd;
+  border-left: 4px solid var(--amber);
+  border-radius: 0 10px 10px 0;
+  padding: 14px 18px;
+  font-size: 15px;
+}
+
+.callout strong { color: var(--teal-deep); }
+
+.donut-wrap {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.legend { list-style: none; margin: 0; padding: 0; font-size: 14.5px; }
+
+.legend li { padding: 5px 0; display: flex; gap: 9px; align-items: center; }
+
+.legend .swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  flex: 0 0 14px;
+}
+
+.legend .legend-value { font-weight: 700; margin-left: auto; padding-left: 18px; }
+
+/* ---------- footer ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 22px 20px 30px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.footer-inner { max-width: 1080px; margin: 0 auto; }
+
+.site-footer a { color: var(--teal); }
+
+/* ---------- phone ---------- */
+
+@media (max-width: 760px) {
+  .kpi-grid { grid-template-columns: 1fr 1fr; }
+  .split { grid-template-columns: 1fr; }
+  .page h1 { font-size: 27px; }
+  .brand { font-size: 22px; }
+  .kpi .kpi-value { font-size: 27px; }
+  .site-nav a { padding: 8px 9px; font-size: 13px; }
+  .card { padding: 16px; }
+  table.data { font-size: 13.5px; }
+}
